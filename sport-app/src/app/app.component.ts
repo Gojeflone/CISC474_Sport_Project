@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiListService } from './services/api-list.service';
+import { ApiList } from './models/api-list.model';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ApiListService } from './services/api-list.service';
 })
 export class AppComponent implements OnInit {
   title = 'sport-app';
-  apiList$: Observable<Object>;
+  apiList$: Observable<ApiList>;
 
   constructor(private apiListService: ApiListService) { }
 
