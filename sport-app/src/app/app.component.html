@@ -6,22 +6,4 @@
   
 </div>
 <h2>Here's the data: <span *ngIf="!(apiList$ | async)">loading...</span></h2>
-<!--
-<ul class = "list-group" *ngFor="let i of (apiList$ | async)?.entries ">
-  <li class = "list-group-item ">{{i.Description}}</li>
-</ul> 
--->
-<table class="table table-hover">
-  <thead>
-    <th>API</th>
-    <th>Description</th>
-    <th>Category</th>
-    <th>Cors</th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let entry of (apiList$ | async)?.entries ">
-    <td>
-      {{entry.API}}</td><td>{{entry.Description}}</td><td>{{entry.Category}}</td><td>{{entry.Cors}}</td>
-  </tr>
-  </tbody>
-</table>
+<app-list-of-apis></app-list-of-apis>

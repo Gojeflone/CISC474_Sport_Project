@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { ListOfApisComponent } from './components/list-of-apis/list-of-apis.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListOfApisComponent
   ],
   imports: [
     BrowserModule,
