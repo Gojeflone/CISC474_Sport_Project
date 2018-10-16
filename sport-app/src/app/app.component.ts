@@ -1,20 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ApiListService } from './services/api-list.service';
-import { ApiList } from './models/api-list.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'API-app';
-  apiList$: Observable<ApiList>;
-
-  constructor(private apiListService: ApiListService) { }
-
-  ngOnInit() {
-    this.apiList$ = this.apiListService.getData();
-  }
 }

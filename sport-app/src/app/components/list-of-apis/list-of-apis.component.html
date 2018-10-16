@@ -1,0 +1,15 @@
+<h2>Here's the data: <span *ngIf="!(apiList$ | async)">loading...</span></h2>
+<table class="table table-hover">
+  <thead>
+    <th>API</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Cors</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let entry of (apiList$ | async)?.entries ">
+    <td>
+      {{entry.API}}</td><td>{{entry.Description}}</td><td>{{entry.Category}}</td><td>{{entry.Cors}}</td>
+  </tr>
+  </tbody>
+</table>
