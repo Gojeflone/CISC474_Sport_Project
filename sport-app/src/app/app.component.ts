@@ -9,7 +9,7 @@ import { ApiList } from './models/api-list.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'sport-app';
+  title = 'API-app';
   apiList$: Observable<ApiList>;
 
   constructor(private apiListService: ApiListService) { }

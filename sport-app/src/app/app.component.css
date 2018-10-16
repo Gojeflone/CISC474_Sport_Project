@@ -1,0 +1,22 @@
+table th{
+    text-align: left;
+    font-size: large;
+    padding-right:20px;
+}
+
+.table-hover > tbody > tr{
+    outline: thin solid;
+    border-collapse: collapse;
+    
+}
+.table-hover > tbody > td { 
+    padding-bottom: 10em;
+}
+
+.table-hover > tbody > tr:hover{
+    background-color: rgb(53, 192, 247);
+    cursor: pointer;
+}
+
+
+
