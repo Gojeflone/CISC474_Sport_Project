@@ -15,6 +15,7 @@
           <th>API</th>
           <th>Description</th>
           <th>Category</th>
+          <th>Link</th>
           <th>Cors</th>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
             <td>{{entry.API}}</td>
             <td>{{entry.Description}}</td>
             <td>{{entry.Category}}</td>
+            <td><a [href]="entry.Link">{{entry.Link}}</a></td>
             <div *ngIf="entry.Cors == 'yes'; else elseIfBlock">
               <td><span class="badge badge-success">{{entry.Cors}}</span></td>
             </div>
