@@ -1,0 +1,23 @@
+{
+  "name": "cisc474_sport_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gojeflone/CISC474_Sport_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gojeflone/CISC474_Sport_Project/issues"
+  },
+  "homepage": "https://github.com/Gojeflone/CISC474_Sport_Project#readme"
+}
