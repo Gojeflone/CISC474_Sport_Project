@@ -1,8 +1,47 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
   
 </div>
+
 <router-outlet></router-outlet>
+
+<div class="container">
+  <div class="row">
+    <div class="span5">
+      <table class="table table-striped table-condensed">
+        <thead>
+          <th>API</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Link</th>
+          <th>Cors</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of (apiList$ | async)?.entries ">
+            <td>{{entry.API}}</td>
+            <td>{{entry.Description}}</td>
+            <td>{{entry.Category}}</td>
+            <td><a [href]="entry.Link">{{entry.Link}}</a></td>
+            <div *ngIf="entry.Cors == 'yes'; else elseIfBlock">
+              <td><span class="badge badge-success">{{entry.Cors}}</span></td>
+            </div>
+            <ng-template #elseIfBlock>
+              <div *ngIf="entry.Cors == 'no'; else elseBlock">
+                <td><span class="badge badge-danger">{{entry.Cors}}</span></td>
+              </div>
+             <ng-template #elseBlock>
+              <td><span class="badge badge-warning">{{entry.Cors}}</span></td>
+              </ng-template>
+            </ng-template>  
+
+            
+          </tr>
+        </tbody>  
+      </table>
+    </div>
+  </div>
+</div> 
