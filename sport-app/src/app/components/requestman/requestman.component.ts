@@ -12,4 +12,9 @@ export class RequestmanComponent implements OnInit {
   ngOnInit() {
   }
 
+  updated(event: KeyboardEvent) {
+    const element: HTMLInputElement = event.srcElement as HTMLInputElement;
+    console.dir(element.value);
+  }
+
 }
