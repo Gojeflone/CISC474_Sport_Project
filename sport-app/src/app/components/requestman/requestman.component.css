@@ -1,12 +1,8 @@
-#InputText {
+#bar {
     width: 75%;
-    margin: 20px;
+    margin: auto;
 }
 
-#ResendButton {
-    width: 15%;
-}
-
-#ResponseText.error {
+.error {
     color: red;
 }
