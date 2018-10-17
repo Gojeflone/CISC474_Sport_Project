@@ -1,4 +1,5 @@
-<input (keyup)="updated($event)" #theInput/><button (click)="resend()">Resend Request</button>
-<div *ngIf="!(result$ | async) && theInput.value">Loading...</div>
-<div *ngIf="(result$ | async)?.isError && (result$ | async)?.response?.status === 0">Response is likely missing CORS headers.</div>
-<div [class.error]="(result$ | async)?.isError" *ngIf="result$ | async"><pre>{{ (result$ | async)?.response | json }}</pre></div>
+<input id='InputText' (keyup)="updated($event)" #theInput/>
+<button id='ResendButton' (click)="resend()">Resend Request</button>
+<div id='LoadingText' *ngIf="!(result$ | async) && theInput.value">Loading...</div>
+<div id='CORSWarningText' *ngIf="(result$ | async)?.isError && (result$ | async)?.response?.status === 0">Response is likely missing CORS headers.</div>
+<div id='ResponseText' [class.error]="(result$ | async)?.isError" *ngIf="result$ | async"><pre>{{ (result$ | async)?.response | json }}</pre></div>
