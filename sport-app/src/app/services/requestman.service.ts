@@ -20,6 +20,14 @@ export class RequestmanService {
   update(url: string) {
     this.lastRequestedUrl = url;
 
+    if (!url.match(/^http(s?):\/\/.+\..+/)) {
+      this.subject.next({
+        isError: true,
+        response: {error: 'Invalid URL'}
+      });
+      return;
+    }
+
     this.subject.next(null); // Clear current result from the screen
     if (this.currentSubscription) {
       this.currentSubscription.unsubscribe();
