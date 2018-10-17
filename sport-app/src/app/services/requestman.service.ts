@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, BehaviorSubject, Subscription } from 'rxjs';
+import { Observable, Subject, BehaviorSubject, Subscription, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -20,7 +21,11 @@ export class RequestmanService {
       this.currentSubscription.unsubscribe();
     }
 
-    this.currentSubscription = this.httpClient.get<any>(url).subscribe(
+    this.currentSubscription = this.httpClient.get<any>(url).pipe(
+      catchError(error => {
+        return of(error);
+      })
+    ).subscribe(
       x => {
         this.subject.next(x);
       }
