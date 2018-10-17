@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ListOfApisComponent } from './components/list-of-apis/list-of-apis.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RequestmanComponent } from './components/requestman/requestman.component';
+import { FindImageUrlsPipe } from './pipes/find-image-urls.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListOfApisComponent,
-    RequestmanComponent
+    RequestmanComponent,
+    FindImageUrlsPipe
   ],
   imports: [
     BrowserModule,
