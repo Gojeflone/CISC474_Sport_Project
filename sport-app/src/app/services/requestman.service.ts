@@ -20,6 +20,11 @@ export class RequestmanService {
   update(url: string) {
     this.lastRequestedUrl = url;
 
+    if (url === '') {
+      this.subject.next(null);
+      return;
+    }
+
     if (!url.match(/^http(s?):\/\/.+\..+/)) {
       this.subject.next({
         isError: true,
