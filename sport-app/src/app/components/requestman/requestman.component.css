@@ -1,8 +1,14 @@
-#bar {
+:host {
+    display: block;
     width: 75%;
     margin: auto;
 }
 
 .error {
     color: red;
+}
+
+pre {
+    overflow: auto;
+    padding: 16px;
 }
