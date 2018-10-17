@@ -21,4 +21,8 @@ export class RequestmanComponent implements OnInit {
     this.requestmanService.update(element.value);
   }
 
+  resend() {
+    this.requestmanService.resend();
+  }
+
 }

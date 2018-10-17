@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RequestmanService {
+  lastRequestedUrl: string = null;
   subject: Subject<any>;
   currentSubscription: Subscription = null;
 
@@ -16,7 +17,9 @@ export class RequestmanService {
   }
 
   update(url: string) {
-    this.subject.next(null);
+    this.lastRequestedUrl = url;
+
+    this.subject.next(null); // Clear current result from the screen
     if (this.currentSubscription) {
       this.currentSubscription.unsubscribe();
     }
@@ -34,5 +37,11 @@ export class RequestmanService {
 
   getObservable(): Observable<any> {
     return this.subject.asObservable();
+  }
+
+  resend() {
+    if (this.lastRequestedUrl) {
+      this.update(this.lastRequestedUrl);
+    }
   }
 }
