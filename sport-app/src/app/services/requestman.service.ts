@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject, Subscription, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { RequestmanResponse } from '../models/requestman-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestmanService {
   lastRequestedUrl: string = null;
-  subject: Subject<any>;
+  subject: Subject<RequestmanResponse>;
   currentSubscription: Subscription = null;
 
   constructor(private httpClient: HttpClient) {
-    this.subject = new BehaviorSubject<any>(null);
-    this.subject.next({string: 'Hello!'});
+    this.subject = new BehaviorSubject<RequestmanResponse>(null);
+    this.subject.next(null);
   }
 
   update(url: string) {
@@ -24,9 +25,10 @@ export class RequestmanService {
       this.currentSubscription.unsubscribe();
     }
 
-    this.currentSubscription = this.httpClient.get<any>(url).pipe(
+    this.currentSubscription = this.httpClient.get<{}>(url).pipe(
+      map(x => ({isError: false, response: x})),
       catchError(error => {
-        return of(error);
+        return of({isError: true, response: error});
       })
     ).subscribe(
       x => {
@@ -35,7 +37,7 @@ export class RequestmanService {
     );
   }
 
-  getObservable(): Observable<any> {
+  getObservable(): Observable<RequestmanResponse> {
     return this.subject.asObservable();
   }
 

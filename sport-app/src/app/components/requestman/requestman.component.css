@@ -6,3 +6,7 @@ input {
 button {
     width: 15%;
 }
+
+.error {
+    color: red;
+}
