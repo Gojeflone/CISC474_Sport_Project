@@ -1,2 +1,3 @@
-<input (keyup)="updated($event)"/><button (click)="resend()">Resend Request</button>
+<input (keyup)="updated($event)" #theInput/><button (click)="resend()">Resend Request</button>
 <div [class.error]="(result$ | async)?.isError" *ngIf="result$ | async"><pre>{{ (result$ | async)?.response | json }}</pre></div>
+<div *ngIf="!(result$ | async) && theInput.value">Loading...</div>
