@@ -1,1 +1,2 @@
 <input (keyup)="updated($event)"/>
+<div *ngIf="result$ | async"><pre>{{ result$ | async | json }}</pre></div>

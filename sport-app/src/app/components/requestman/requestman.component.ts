@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RequestmanService } from '../../services/requestman.service';
 
 @Component({
   selector: 'app-requestman',
@@ -6,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./requestman.component.css']
 })
 export class RequestmanComponent implements OnInit {
+  result$: Observable<any>;
 
-  constructor() { }
+  constructor(private requestmanService: RequestmanService) { }
 
   ngOnInit() {
+    this.result$ = this.requestmanService.getObservable();
   }
 
   updated(event: KeyboardEvent) {
     const element: HTMLInputElement = event.srcElement as HTMLInputElement;
-    console.dir(element.value);
+    this.requestmanService.update(element.value);
   }
 
 }
