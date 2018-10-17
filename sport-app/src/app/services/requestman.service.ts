@@ -18,6 +18,11 @@ export class RequestmanService {
   }
 
   update(url: string) {
+    if (url === this.lastRequestedUrl) { return; }
+    this.sendRequest(url);
+  }
+
+  sendRequest(url: string) {
     this.lastRequestedUrl = url;
 
     if (url === '') {
@@ -56,7 +61,7 @@ export class RequestmanService {
 
   resend() {
     if (this.lastRequestedUrl) {
-      this.update(this.lastRequestedUrl);
+      this.sendRequest(this.lastRequestedUrl);
     }
   }
 }
