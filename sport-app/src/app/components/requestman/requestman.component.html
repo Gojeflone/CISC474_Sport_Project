@@ -1,0 +1,16 @@
+<div class='input-group mb-3' id='bar'>
+    <div class="input-group-prepend">
+        <span class="input-group-text">URL</span>
+    </div>
+    <input class='form-control' (keyup)="updated($event)" #theInput/>
+    <div class="input-group-append">
+        <button class='btn' (click)="resend()">Resend Request</button>
+    </div>
+</div>
+<div *ngIf="!(result$ | async) && theInput.value">Loading...</div>
+<div class="alert alert-danger" *ngIf="(result$ | async)?.isError && (result$ | async)?.response?.status === 0">Response is likely missing CORS headers.</div>
+<pre class="bg-light rounded" [class.error]="(result$ | async)?.isError" *ngIf="result$ | async">{{ (result$ | async)?.response | json }}</pre>
+
+<ng-template ngFor let-url [ngForOf]="(result$ | async)?.response | findImageUrls">
+    <img [src]="url" />
+</ng-template>
