@@ -1,25 +1,6 @@
-<!--
-<h2>Here's the data: <span *ngIf="!(apiList$ | async)">loading...</span></h2>
-
-<table class="table table-hover">
-  <thead>
-    <th>API</th>
-    <th>Description</th>
-    <th>Category</th>
-    <th>Cors</th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let entry of (apiList$ | async)?.entries ">
-    <td>
-      {{entry.API}}</td><td>{{entry.Description}}</td><td>{{entry.Category}}</td><td>{{entry.Cors}}</td>
-  </tr>
-  </tbody>
-</table>
--->
-
 <div id="wrap">
   <form action="" autocomplete="on">
-  <input id="search" name="search" type="text" placeholder="Search for API's"><input id="search_submit" value="Rechercher" type="submit">
+  <input [(ngModel)]="search" placeholder="Search for API's" name = "search" ><input id="search_submit" value="Rechercher" type="submit">
   </form>
 </div>
 
@@ -35,7 +16,7 @@
           <th>Cors</th>
         </thead>
         <tbody>
-          <tr *ngFor="let entry of (apiList$ | async)?.entries ">
+          <tr *ngFor="let entry of (apiList$ | async)?.entries | filter: search">
             <td>{{entry.API}}</td>
             <td>{{entry.Description}}</td>
             <td>{{entry.Category}}</td>
@@ -47,12 +28,10 @@
               <div *ngIf="entry.Cors == 'no'; else elseBlock">
                 <td><span class="badge badge-danger">{{entry.Cors}}</span></td>
               </div>
-             <ng-template #elseBlock>
+            <ng-template #elseBlock>
               <td><span class="badge badge-warning">{{entry.Cors}}</span></td>
               </ng-template>
-            </ng-template>  
-
-            
+            </ng-template>
           </tr>
         </tbody>  
       </table>
