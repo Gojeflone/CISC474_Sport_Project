@@ -39,7 +39,10 @@
             <td>{{entry.API}}</td>
             <td>{{entry.Description}}</td>
             <td>{{entry.Category}}</td>
-            <td><a [href]="entry.Link">{{entry.Link}}</a></td>
+            <td>
+              <button (click)="goto(entry.Link)">Open in Requestman</button>
+              <a [href]="entry.Link">{{entry.Link}}</a>
+            </td>
             <div *ngIf="entry.Cors == 'yes'; else elseIfBlock">
               <td><span class="badge badge-success">{{entry.Cors}}</span></td>
             </div>
