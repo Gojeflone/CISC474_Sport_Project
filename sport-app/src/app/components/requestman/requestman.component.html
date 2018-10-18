@@ -2,7 +2,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text">URL</span>
     </div>
-    <input class='form-control' (keyup)="updated($event)" #theInput/>
+    <input class='form-control' (keyup)="textboxUpdated($event)" [value]="textboxValue" #theInput/>
     <div class="input-group-append">
         <button class='btn' (click)="resend()">Resend Request</button>
     </div>
