@@ -100,7 +100,3 @@ button img {
   padding: 0px;
   height: 2em;
 }
-
-button:hover {
-  background-color: var(--light);
-}
