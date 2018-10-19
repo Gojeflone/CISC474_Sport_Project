@@ -1,22 +1,22 @@
-table th{
-    text-align: left;
-    font-size: large;
-    padding-right:20px;
+nav {
+    margin-bottom: 20px;
 }
 
-.table-hover > tbody > tr{
-    outline: thin solid;
-    border-collapse: collapse;
-    
-}
-.table-hover > tbody > td { 
-    padding-bottom: 10em;
+nav a {
+    margin: auto;
+    color: var(--gray);
+    border-radius: 10px;
+    transition: background-color 0.5s ease-out;
 }
 
-.table-hover > tbody > tr:hover{
-    background-color: rgb(53, 192, 247);
-    cursor: pointer;
+nav a.active {
+    background-color: rgba(0,0,0, 0.05);
 }
 
+nav a:hover {
+    color: var(--gray-dark);
+}
 
-
+nav a:active {
+    color: var(--dark);
+}

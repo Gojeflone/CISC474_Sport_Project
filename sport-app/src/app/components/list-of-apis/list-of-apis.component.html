@@ -1,6 +1,6 @@
 <div id="wrap">
   <form action="" autocomplete="on">
-  <input [(ngModel)]="search" placeholder="Search for API's" name = "search" ><input id="search_submit" value="Rechercher" type="submit">
+  <input id="search" placeholder="Search for API's" name = "search" ><input id="search_submit" value="Rechercher" type="submit">
   </form>
 </div>
 
@@ -16,7 +16,7 @@
           <th>Cors</th>
         </thead>
         <tbody>
-          <tr *ngFor="let entry of (apiList$ | async)?.entries | filter: search">
+          <tr *ngFor="let entry of (apiList$ | async)?.entries | filter: search | paginate: { itemsPerPage: 20, currentPage: p }; let i = index">
             <td>{{entry.API}}</td>
             <td>{{entry.Description}}</td>
             <td>{{entry.Category}}</td>
@@ -35,6 +35,7 @@
           </tr>
         </tbody>  
       </table>
+      <pagination-controls class="d-flex justify-content-center" (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
 </div> 

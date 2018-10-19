@@ -27,11 +27,11 @@ body {
 	font-size: 15px;
 }
 #wrap {
-  margin: 50px 100px;
-  display: inline-block;
-  position: relative;
+  margin: 50px 22vw;
+  /*display: inline-block;*/
+  /*: center;*/
   height: 80px;
-  float: right;
+  /*float: right;*/
   padding: 0;
   position: relative;
 }
