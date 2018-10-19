@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class ListOfApisComponent implements OnInit {
   apiList$: Observable<ApiList>;
+  //initializing p to one
+  p: number = 1;
 
   constructor(
     private apiListService: ApiListService,

@@ -7,6 +7,7 @@ import { ListOfApisComponent } from './components/list-of-apis/list-of-apis.comp
 import { AppRoutingModule } from './app-routing.module';
 import { RequestmanComponent } from './components/requestman/requestman.component';
 import { FindImageUrlsPipe } from './pipes/find-image-urls.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FindImageUrlsPipe } from './pipes/find-image-urls.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

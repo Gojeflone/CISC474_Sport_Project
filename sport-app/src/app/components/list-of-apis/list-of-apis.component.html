@@ -35,7 +35,7 @@
           <th>Cors</th>
         </thead>
         <tbody>
-          <tr *ngFor="let entry of (apiList$ | async)?.entries ">
+          <tr *ngFor="let entry of (apiList$ | async)?.entries | paginate: { itemsPerPage: 20, currentPage: p }; let i = index">
             <td>{{entry.API}}</td>
             <td>{{entry.Description}}</td>
             <td>{{entry.Category}}</td>
@@ -61,6 +61,7 @@
           </tr>
         </tbody>  
       </table>
+      <pagination-controls class="d-flex justify-content-center" (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
 </div> 
