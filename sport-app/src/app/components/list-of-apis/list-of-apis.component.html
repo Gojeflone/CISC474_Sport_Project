@@ -43,7 +43,7 @@
               <button class="btn btn-light" (click)="goto(entry.Link)">
                 <img src="assets/images/RQ.svg" />
               </button>
-              <a [href]="entry.Link">{{entry.Link}}</a>
+              <a [href]="entry.Link" target="_blank">{{entry.Link}}</a>
             </td>
             <div *ngIf="entry.Cors == 'yes'; else elseIfBlock">
               <td><span class="badge badge-success">{{entry.Cors}}</span></td>
