@@ -11,8 +11,8 @@ table th{
 .table-hover > tbody > tr{
     outline: thin solid;
     border-collapse: collapse;
-    
 }
+
 .table-hover > tbody > td { 
     padding-bottom: 10em;
 }
