@@ -90,3 +90,14 @@ input[type="submit"]:hover {
   opacity: 0.8;
 }
 
+button {
+  padding: 4px;
+  margin: 0px;
+  margin-right: 12px;
+}
+
+button img {
+  margin: 0px;
+  padding: 0px;
+  height: 2em;
+}
