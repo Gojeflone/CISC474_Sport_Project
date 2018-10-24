@@ -102,6 +102,15 @@ button img {
   height: 2em;
 }
 
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: rgba(0,0,0, 0.05);
+  text-align: center;
+
 tr {
   transition: transform 0.2s ease;
 }
