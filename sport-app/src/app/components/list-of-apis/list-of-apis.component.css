@@ -110,6 +110,7 @@ button img {
   padding: 1rem;
   background-color: rgba(0,0,0, 0.05);
   text-align: center;
+}
 
 tr {
   transition: transform 0.2s ease;
