@@ -11,8 +11,8 @@ table th{
 .table-hover > tbody > tr{
     outline: thin solid;
     border-collapse: collapse;
-    
 }
+
 .table-hover > tbody > td { 
     padding-bottom: 10em;
 }
@@ -110,4 +110,11 @@ button img {
   padding: 1rem;
   background-color: rgba(0,0,0, 0.05);
   text-align: center;
+
+tr {
+  transition: transform 0.2s ease;
+}
+
+tr:hover {
+  transform: scale(1.05);
 }
